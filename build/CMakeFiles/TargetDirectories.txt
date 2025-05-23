@@ -1,0 +1,3 @@
+/home/chiru/Stuffs/kpit/auotomotiveProject/build/CMakeFiles/AutomotiveSystemManagement.dir
+/home/chiru/Stuffs/kpit/auotomotiveProject/build/CMakeFiles/edit_cache.dir
+/home/chiru/Stuffs/kpit/auotomotiveProject/build/CMakeFiles/rebuild_cache.dir
