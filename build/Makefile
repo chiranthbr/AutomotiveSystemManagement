@@ -153,6 +153,54 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/DTCManagement.o: src/DTCManagement.cpp.o
+.PHONY : src/DTCManagement.o
+
+# target to build an object file
+src/DTCManagement.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/DTCManagement.cpp.o
+.PHONY : src/DTCManagement.cpp.o
+
+src/DTCManagement.i: src/DTCManagement.cpp.i
+.PHONY : src/DTCManagement.i
+
+# target to preprocess a source file
+src/DTCManagement.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/DTCManagement.cpp.i
+.PHONY : src/DTCManagement.cpp.i
+
+src/DTCManagement.s: src/DTCManagement.cpp.s
+.PHONY : src/DTCManagement.s
+
+# target to generate assembly for a file
+src/DTCManagement.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/DTCManagement.cpp.s
+.PHONY : src/DTCManagement.cpp.s
+
+src/alertManagement.o: src/alertManagement.cpp.o
+.PHONY : src/alertManagement.o
+
+# target to build an object file
+src/alertManagement.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/alertManagement.cpp.o
+.PHONY : src/alertManagement.cpp.o
+
+src/alertManagement.i: src/alertManagement.cpp.i
+.PHONY : src/alertManagement.i
+
+# target to preprocess a source file
+src/alertManagement.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/alertManagement.cpp.i
+.PHONY : src/alertManagement.cpp.i
+
+src/alertManagement.s: src/alertManagement.cpp.s
+.PHONY : src/alertManagement.s
+
+# target to generate assembly for a file
+src/alertManagement.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/alertManagement.cpp.s
+.PHONY : src/alertManagement.cpp.s
+
 src/create.o: src/create.cpp.o
 .PHONY : src/create.o
 
@@ -213,6 +261,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/DTCManagement.o"
+	@echo "... src/DTCManagement.i"
+	@echo "... src/DTCManagement.s"
+	@echo "... src/alertManagement.o"
+	@echo "... src/alertManagement.i"
+	@echo "... src/alertManagement.s"
 	@echo "... src/create.o"
 	@echo "... src/create.i"
 	@echo "... src/create.s"

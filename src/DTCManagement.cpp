@@ -1,13 +1,12 @@
+#include "DTCManagement.h"
 #include "iostream"
-#include "vehicleManagement.h"
+#include "create.h"
 #include "sqlite3.h"
 #include <string>
-#include "create.h"
 
 using namespace std;
 
-
-void VehicleManagement::showColumns() {
+void DtcManagement::showColumns() {
 
    int rc = sqlite3_open("../database/vehicleDatase.sqlite", &database);
    if(rc) {
@@ -16,13 +15,13 @@ void VehicleManagement::showColumns() {
    }
 
    char* errMsg = 0;
-   std::string getColumns = "select * from vehicles;";
+   std::string getColumns = "select * from DTCs;";
    const char* getcols = getColumns.c_str();
 
    rc = sqlite3_exec(database, getcols, callbackGetColumns, 0, &errMsg);
 }
 
-int VehicleManagement::insertData(string make, string model, int year, string vin, string fuelType) {
+int DtcManagement::insertData(int vehicleId, string DTCCode, string description, string severity) {
    int rc = sqlite3_open("../database/vehicleDatase.sqlite", &database);
 
    if(rc) {
@@ -34,12 +33,11 @@ int VehicleManagement::insertData(string make, string model, int year, string vi
 
    char* errMsg = 0;
 
-   std::string temp = "insert into Vehicles(Make, Model, Year, VIN, FuelType) values ('"\
-                      + make + "', '"\
-                      + model + "', '"\
-                      + std::to_string(year) + "', '"\
-                      + vin + "', '"\
-                      + fuelType + "');";
+   std::string temp = "insert into DTCs(VehicleId, DTCCode, Description, Severity) values ('"\
+                      + std::to_string(vehicleId) + "', '"\
+                      + DTCCode + "', '"\
+                      + description + "', '"\
+                      + severity + "');";
 
    const char* sql = temp.c_str();
    rc = sqlite3_exec(database, sql, callback, 0, &errMsg);
@@ -48,12 +46,12 @@ int VehicleManagement::insertData(string make, string model, int year, string vi
       cout << "Cant insert: " << errMsg << endl;
       sqlite3_free(errMsg);
    } else {
-      cout << "Data inserted successffully" << endl;
+      cout << "Data inserted to dtc successffully" << endl;
    }
    return 0;
 }
 
-void VehicleManagement::del(int id) {
+void DtcManagement::del(int id) {
    int rc = sqlite3_open("../database/vehicleDatase.sqlite", &database);
    if(rc) {
       cout << "Couldnt open database." << endl;
@@ -62,7 +60,7 @@ void VehicleManagement::del(int id) {
 
    char* errMsg = 0;
 
-   std::string temp = "delete from Vehicles where ID = " + std::to_string(id) + ";";
+   std::string temp = "delete from DTCs where ID = " + std::to_string(id) + ";";
 
    const char* sql = temp.c_str();
 
@@ -81,12 +79,11 @@ void VehicleManagement::del(int id) {
 }
 
 
-
-void VehicleManagement::update(std::string make, std::string model, int year, std::string vin, std::string fuelType, int id) {
+void DtcManagement::update(std::string DTCCode, std::string description, std::string severity, int id) {
 
    showColumns();
 
-   std::string sql = "update Vehicles set Make = ?, Model = ?, Year = ?, VIN = ?, FuelType = ? where ID = ?";
+   std::string sql = "update DTCs set DTCCode = ?, description = ?, severity = ? where ID = ?";
 
    sqlite3_stmt* stmt;
    if(sqlite3_prepare_v2(database, sql.c_str(), -1, &stmt, nullptr) != SQLITE_OK) {
@@ -94,15 +91,14 @@ void VehicleManagement::update(std::string make, std::string model, int year, st
       return;
    }
 
-   sqlite3_bind_text(stmt, 1, make.c_str(), -1, SQLITE_STATIC);
-   sqlite3_bind_text(stmt, 2, model.c_str(), -1, SQLITE_STATIC);
-   sqlite3_bind_int(stmt, 3, year);
-   sqlite3_bind_text(stmt, 4, vin.c_str(), -1, SQLITE_STATIC);
-   sqlite3_bind_text(stmt, 5, fuelType.c_str(), -1, SQLITE_STATIC);
-   sqlite3_bind_int(stmt, 6, id);
+   sqlite3_bind_text(stmt, 1, DTCCode.c_str(), -1, SQLITE_STATIC);
+   sqlite3_bind_text(stmt, 2, description.c_str(), -1, SQLITE_STATIC);
+   sqlite3_bind_text(stmt, 3, severity.c_str(), -1, SQLITE_STATIC);
+   sqlite3_bind_int(stmt, 4, id);
 
    if(sqlite3_step(stmt) != SQLITE_DONE) {
       cout << "Couldnt update: " << sqlite3_errmsg(database) << endl;
+      sqlite3_finalize(stmt);
       return;
    } else {
       cout << "Updated successfully!!" << endl;

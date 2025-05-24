@@ -7,6 +7,15 @@ using namespace std;
 
 sqlite3* database = nullptr;
 
+int callbackGetColumns(void* Notused, int argc, char** argv, char** azColName) {
+   for(int i = 0; i < argc; i++) {
+      cout << i + 1 << " : " << azColName[i] << endl;
+   }
+   cout << "enter numbers with spaces or enter to update values: (enter any character to stop, except space and tab)" << endl;
+
+   return 0;
+}
+
 int callback(void *NotUsed, int argc, char **argv, char **azColName) {
    int i;
    string temp = argv[i] ? argv[i] : "NULL";
