@@ -2,10 +2,24 @@
 #include "iostream"
 #include "sqlite3.h"
 #include <string.h>
+#include "vector"
+#include <string>
+#include <typeinfo>
 
 using namespace std;
 
 sqlite3* database = nullptr;
+
+vector<string> retrieveRow(void* NotUse, int argc, char** argv, char** azColName) {
+   vector<string> s;
+   for(int i = 0; i < argc; i++) {
+      if(typeid(argv[i]).name() == 'i' || typeid(argv[i]).name() == 'd') {
+         s.push_back(std::to_string(argv[i]));
+      } else {
+         s.push_back(argv[i]);
+      }
+   }
+}
 
 int callbackGetColumns(void* Notused, int argc, char** argv, char** azColName) {
    for(int i = 0; i < argc; i++) {

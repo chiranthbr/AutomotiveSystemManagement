@@ -1,8 +1,10 @@
 #include "iostream"
 #include "vehicleManagement.h"
 #include "sqlite3.h"
+#include <algorithm>
 #include <string>
 #include "create.h"
+#include "vector"
 
 using namespace std;
 
@@ -20,6 +22,8 @@ void VehicleManagement::showColumns() {
    const char* getcols = getColumns.c_str();
 
    rc = sqlite3_exec(database, getcols, callbackGetColumns, 0, &errMsg);
+   cout << "Press <Enter> if dont want to change else enter the value to change it into: " << endl;
+
 }
 
 int VehicleManagement::insertData(string make, string model, int year, string vin, string fuelType) {
@@ -84,8 +88,6 @@ void VehicleManagement::del(int id) {
 
 void VehicleManagement::update(std::string make, std::string model, int year, std::string vin, std::string fuelType, int id) {
 
-   showColumns();
-
    std::string sql = "update Vehicles set Make = ?, Model = ?, Year = ?, VIN = ?, FuelType = ? where ID = ?";
 
    sqlite3_stmt* stmt;
@@ -109,4 +111,94 @@ void VehicleManagement::update(std::string make, std::string model, int year, st
    }
 
    sqlite3_finalize(stmt);
+}
+
+void VehicleManagement::showMenu() {
+   int choice;
+   std::string menu = "1. Insert \n2. Update \n3. Delete \n4. Back";
+   cout << menu;
+   cin >> choice;
+
+   switch(choice) {
+      case 1:
+         std::string make, model, vin, fuel;
+         int year;
+         cout << "Make: ";
+         cin >> make;
+         cout << "Model: ";
+         cin >> model;
+         cout << "Year: ";
+         cin >>  year;
+         cout << "VIN: ";
+         cin >> vin;
+         cout << "Fuel Type: ";
+         cin >>fuel;
+         this -> insertData(make, model, year, vin, fuel);
+         break;
+      case 3:
+         int id;
+         cout << "Enter id to be deleted: ";
+         cin >> id;
+         this -> del(id);
+         break;
+      case 2:
+         this -> showColumns();
+         int rc = sqlite3_open("../database/vehicleDatase.sqlite", &database);
+         std::string make, model, vin, fuel;
+         int year, id;
+         cout << "Make: ";
+         cin >> make;
+         cout << "Model: ";
+         cin >> model;
+         cout << "Year: ";
+         cin >>  year;
+         cout << "VIN: ";
+         cin >> vin;
+         cout << "Fuel Type: ";
+         cin >>fuel;
+         cout << "ID  (this is compulsory): ";
+         cin >> id;
+
+         vector<std::string> s;
+         int rc;
+         std::string sql = "select Make, Model, year, VIN, FuelType from Vehicles where ID = " + std::to_string(id) + ";";
+         char* errMsg = 0;
+         sqlite3_stmt* stmt;
+         rc = sqlite3_prepare_v2(database, sql.c_str(), -1, &stmt, 0);
+         if(rc != SQLITE_OK) {
+            cout << sqlite3_errmsg(database) << endl;
+            return;
+         }
+         rc = sqlite3_step(stmt);
+         if(rc == SQLITE_ROW) {
+            int columnCount = sqlite3_column_count(stmt);
+            for(int i = 0; i < columnCount; i++) {
+               const unsigned char* data = sqlite3_column_text(stmt, i);
+               if(data) {
+                  s.push_back(std::string((const char*)data));
+               }
+            }
+         } else if(rc == SQLITE_DONE) {
+            cout << "NO matching row found: " << endl;
+            return;
+         } else {
+            cout << "Sql error" << sqlite3_errmsg(database) << endl;
+            sqlite3_finalize(stmt);
+            sqlite3_close(database);
+            return;
+         }
+         
+         sqlite3_finalize(stmt);
+         sqlite3_close(database);
+
+         if(make == "") make = s[0];
+         if(model == "") model = s[1];
+         if(year == "") year = atoi(s[2]);
+         else year = atoi(year);
+         if(vin == "") vin = s[3];
+         if(fuel == "") fuel = s[4];
+
+         this -> update(make, model, year, vin, fuel, id);
+
+   }
 }
