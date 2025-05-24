@@ -12,6 +12,4 @@ class DtcManagement {
 
 };
 
-
-
 #endif // !DEBUG

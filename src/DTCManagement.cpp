@@ -3,6 +3,7 @@
 #include "create.h"
 #include "sqlite3.h"
 #include <string>
+#include <ctime>
 
 using namespace std;
 
@@ -47,6 +48,9 @@ int DtcManagement::insertData(int vehicleId, string DTCCode, string description,
       sqlite3_free(errMsg);
    } else {
       cout << "Data inserted to dtc successffully" << endl;
+      time_t = timestamp;
+      time(&timestamp);
+      alert -> insertData(vehicleId, ctime(&timestamp), DTCCode, description);
    }
    return 0;
 }

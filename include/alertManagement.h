@@ -3,7 +3,9 @@
 
 #include <string>
 
-
-int insertData(int vehicleId, std::string timestamp, std::string alertType, std::string description);
+class AlertManagement {
+   public:
+      int insertData(int vehicleId, std::string timestamp, std::string alertType, std::string description);
+};
 
 #endif // !DEBUG
