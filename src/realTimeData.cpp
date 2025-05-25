@@ -5,16 +5,17 @@
 #include "obdInterface.h"
 #include <string>
 #include "alertManagement.h"
+#include <ctime>
 
 using namespace std;
 
-int realTimeData::insertData(int vehicleId, string timestamp) {
+int realTimeDataManagement::insertData(int vehicleId, string timestamp) {
 
    MockOBDInterface* obd = new MockOBDInterface();
 
    int engine = obd -> getEngineSpeed();
    int vehicle = obd -> getVehicleSpeed();
-   int temperature = obd -> getCoolantTemperatue();
+   int temperature = obd -> getCoolantTemperature();
    int fuelLevel = obd -> getFuelLevel();
 
    AlertManagement* alert = new AlertManagement();
@@ -38,14 +39,12 @@ int realTimeData::insertData(int vehicleId, string timestamp) {
       alert -> insertData(vehicleId, timestamp, alertType, "Fuel level is critically low");
    }
 
-   int rc = sqlite3_open("../database/vehicleDatase.sqlite", &database);
-
+   int rc = sqlite3_open("../database/automotiveDatabase.sqlite", &database);
    if(rc) {
-      cout << "Couldnt open database" << endl;
-      return 1;
-   } else {
-      cout << "Opened database successfully" << endl;
+      cout << "Couldnt open database: " << sqlite3_errmsg(database) << endl;
    }
+
+
 
    char* errMsg = 0;
 
@@ -62,19 +61,22 @@ int realTimeData::insertData(int vehicleId, string timestamp) {
 
    if(rc != SQLITE_OK) {
       cout << "Cant insert: " << errMsg << endl;
+      sqlite3_close(database);
       sqlite3_free(errMsg);
    } else {
       cout << "Data inserted to dtc successffully" << endl;
+      sqlite3_close(database);
    }
    return 0;
 }
 
 
-void DtcManagement::del(int id) {
-   int rc = sqlite3_open("../database/vehicleDatase.sqlite", &database);
+void realTimeDataManagement::del(int id) {
+
+
+   int rc = sqlite3_open("../database/automotiveDatabase.sqlite", &database);
    if(rc) {
-      cout << "Couldnt open database." << endl;
-      return;
+      cout << "Couldnt open database: " << sqlite3_errmsg(database) << endl;
    }
 
    char* errMsg = 0;
@@ -87,12 +89,49 @@ void DtcManagement::del(int id) {
 
    if(rc != SQLITE_OK) {
       cout << "Couldnt delete: " << errMsg << endl;
+      sqlite3_close(database);
       sqlite3_free(errMsg);
    } else {
       if(sqlite3_changes(database) == 0) {
          cout << "No matching row found (It might already be deleted or may not have been inserted!!)" << endl;
+         sqlite3_close(database);
          return;
       }
       cout << "Data deleted successsfully!!" << errMsg << endl;
+      sqlite3_close(database);
+   }
+}
+
+void realTimeDataManagement::showMenu() {
+   std::string menu = "1. Insert \n2. Delete";
+   cout << menu;
+
+   int choice;
+   cin >> choice;
+
+   switch(choice) {
+      case 1:
+         {
+            int vehicleId;
+            time_t timestamp;
+            time(&timestamp);
+            cout << "Enter vehicle id to insert: ";
+            cin >> vehicleId;
+            this -> insertData(vehicleId, ctime(&timestamp));
+            break;
+         }
+      case 2:
+         {
+            int id;
+            cout << "Enter ID to delete: ";
+            cin >> id;
+            this -> del(id);
+            break;
+         }
+      default:
+         {
+            cout << "Enter correct choice;" << endl;
+            this -> showMenu();
+         }
    }
 }

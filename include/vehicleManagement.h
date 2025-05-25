@@ -3,6 +3,7 @@
 
 
 #include <string>
+#include "sqlite3.h"
 
 class VehicleManagement {
    public:
@@ -11,7 +12,6 @@ class VehicleManagement {
       void update(std::string make, std::string model, int year, std::string vin, std::string fuelType, int id);
       void del(int id);
       void showColumns();
-
 };
 
 

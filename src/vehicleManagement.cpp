@@ -2,19 +2,21 @@
 #include "vehicleManagement.h"
 #include "sqlite3.h"
 #include <algorithm>
+#include <cstdlib>
 #include <string>
 #include "create.h"
 #include "vector"
+#include <limits>
 
 using namespace std;
 
 
 void VehicleManagement::showColumns() {
 
-   int rc = sqlite3_open("../database/vehicleDatase.sqlite", &database);
+
+   int rc = sqlite3_open("../database/automotiveDatabase.sqlite", &database);
    if(rc) {
-      cout << "Couldnt open database" << endl;
-      return;
+      cout << "Couldnt open database: " << sqlite3_errmsg(database) << endl;
    }
 
    char* errMsg = 0;
@@ -23,17 +25,16 @@ void VehicleManagement::showColumns() {
 
    rc = sqlite3_exec(database, getcols, callbackGetColumns, 0, &errMsg);
    cout << "Press <Enter> if dont want to change else enter the value to change it into: " << endl;
+   sqlite3_close(database);
 
 }
 
 int VehicleManagement::insertData(string make, string model, int year, string vin, string fuelType) {
-   int rc = sqlite3_open("../database/vehicleDatase.sqlite", &database);
 
+
+   int rc = sqlite3_open("../database/automotiveDatabase.sqlite", &database);
    if(rc) {
-      cout << "Couldnt open database" << endl;
-      return 1;
-   } else {
-      cout << "Opened database successfully" << endl;
+      cout << "Couldnt open database: " << sqlite3_errmsg(database) << endl;
    }
 
    char* errMsg = 0;
@@ -49,19 +50,22 @@ int VehicleManagement::insertData(string make, string model, int year, string vi
    rc = sqlite3_exec(database, sql, callback, 0, &errMsg);
 
    if(rc != SQLITE_OK) {
-      cout << "Cant insert: " << errMsg << endl;
+      cout << "Cant insert: " << sqlite3_errmsg(database) << endl;
+      sqlite3_close(database);
       sqlite3_free(errMsg);
    } else {
       cout << "Data inserted successffully" << endl;
+      sqlite3_close(database);
    }
    return 0;
 }
 
 void VehicleManagement::del(int id) {
-   int rc = sqlite3_open("../database/vehicleDatase.sqlite", &database);
+
+
+   int rc = sqlite3_open("../database/automotiveDatabase.sqlite", &database);
    if(rc) {
-      cout << "Couldnt open database." << endl;
-      return;
+      cout << "Couldnt open database: " << sqlite3_errmsg(database) << endl;
    }
 
    char* errMsg = 0;
@@ -73,26 +77,35 @@ void VehicleManagement::del(int id) {
    rc = sqlite3_exec(database, sql, callback, 0, &errMsg);
 
    if(rc != SQLITE_OK) {
-      cout << "Coulnt delete: " << errMsg << endl;
+      cout << "Coulnt delete: " << sqlite3_errmsg(database) << endl;
+      sqlite3_close(database);
       sqlite3_free(errMsg);
    } else {
       if(sqlite3_changes(database) == 0) {
          cout << "No matching row found (It might already be deleted or may not have been inserted!!)" << endl;
+         sqlite3_close(database);
          return;
       }
       cout << "Data deleted successsfully!!" << errMsg << endl;
+      sqlite3_close(database);
    }
 }
 
 
-
 void VehicleManagement::update(std::string make, std::string model, int year, std::string vin, std::string fuelType, int id) {
 
-   std::string sql = "update Vehicles set Make = ?, Model = ?, Year = ?, VIN = ?, FuelType = ? where ID = ?";
+
+   int rc = sqlite3_open("../database/automotiveDatabase.sqlite", &database);
+   if(rc) {
+      cout << "Couldnt open database: " << sqlite3_errmsg(database) << endl;
+   }
+
+
+   std::string sql = "update Vehicles set Make = ?, Model = ?, Year = ?, VIN = ?, FuelType = ? where ID = ?;";
 
    sqlite3_stmt* stmt;
    if(sqlite3_prepare_v2(database, sql.c_str(), -1, &stmt, nullptr) != SQLITE_OK) {
-      cout << "Couldnt update: " << sqlite3_errmsg(database) << endl;
+      cout << "Couldnt update: after prepare" << sqlite3_errmsg(database) << endl;
       return;
    }
 
@@ -104,25 +117,29 @@ void VehicleManagement::update(std::string make, std::string model, int year, st
    sqlite3_bind_int(stmt, 6, id);
 
    if(sqlite3_step(stmt) != SQLITE_DONE) {
-      cout << "Couldnt update: " << sqlite3_errmsg(database) << endl;
+      cout << "Couldnt update: after bind " << sqlite3_errmsg(database) << endl;
+      sqlite3_close(database);
       return;
    } else {
       cout << "Updated successfully!!" << endl;
+      sqlite3_close(database);
    }
 
    sqlite3_finalize(stmt);
 }
 
 void VehicleManagement::showMenu() {
+   
    int choice;
-   std::string menu = "1. Insert \n2. Update \n3. Delete \n4. Back";
+   std::string menu = "1. Insert \n2. Update \n3. Delete \n4. Back\n";
    cout << menu;
    cin >> choice;
 
+   std::string make, model, vin, fuel, year, id;
+
    switch(choice) {
       case 1:
-         std::string make, model, vin, fuel;
-         int year;
+      {
          cout << "Make: ";
          cin >> make;
          cout << "Model: ";
@@ -133,35 +150,33 @@ void VehicleManagement::showMenu() {
          cin >> vin;
          cout << "Fuel Type: ";
          cin >>fuel;
-         this -> insertData(make, model, year, vin, fuel);
+         this -> insertData(make, model, stoi(year), vin, fuel);
          break;
-      case 3:
-         int id;
-         cout << "Enter id to be deleted: ";
-         cin >> id;
-         this -> del(id);
-         break;
+      }
       case 2:
-         this -> showColumns();
-         int rc = sqlite3_open("../database/vehicleDatase.sqlite", &database);
-         std::string make, model, vin, fuel;
-         int year, id;
-         cout << "Make: ";
-         cin >> make;
+      {
+         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Clear leftover newline
+
+         cout << "Make: " << endl;
+         std::getline(std::cin, make);
          cout << "Model: ";
-         cin >> model;
+         std::getline(std::cin, model);
          cout << "Year: ";
-         cin >>  year;
+         std::getline(std::cin, year);
          cout << "VIN: ";
-         cin >> vin;
+         std::getline(std::cin, vin);
          cout << "Fuel Type: ";
-         cin >>fuel;
+         std::getline(std::cin, fuel);
          cout << "ID  (this is compulsory): ";
-         cin >> id;
+         std::getline(std::cin, id);
 
          vector<std::string> s;
-         int rc;
-         std::string sql = "select Make, Model, year, VIN, FuelType from Vehicles where ID = " + std::to_string(id) + ";";
+         std::string sql = "select Make, Model, year, VIN, FuelType from Vehicles where ID = " + id + ";";
+
+         int rc = sqlite3_open("../database/automotiveDatabase.sqlite", &database);
+         if(rc) {
+            cout << "Couldnt open database; " << sqlite3_errmsg(database) << endl;
+         }
          char* errMsg = 0;
          sqlite3_stmt* stmt;
          rc = sqlite3_prepare_v2(database, sql.c_str(), -1, &stmt, 0);
@@ -193,12 +208,25 @@ void VehicleManagement::showMenu() {
 
          if(make == "") make = s[0];
          if(model == "") model = s[1];
-         if(year == "") year = atoi(s[2]);
-         else year = atoi(year);
+         if(year == "") year = s[2];
          if(vin == "") vin = s[3];
          if(fuel == "") fuel = s[4];
 
-         this -> update(make, model, year, vin, fuel, id);
-
+         this -> update(make, model, stoi(year), vin, fuel, stoi(id));
+         break;
+      }
+      case 3:
+      {
+         int id;
+         cout << "Enter id to be deleted: ";
+         cin >> id;
+         this -> del(id);
+         break;
+      }
+      default:
+      {
+         cout << "Enter correct choice" << endl;
+         this -> showMenu();
+      }
    }
 }

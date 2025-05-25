@@ -7,13 +7,11 @@
 using namespace std;
 
 int AlertManagement::insertData(int vehicleId, string timestamp, string alertType, string description) {
-   int rc = sqlite3_open("../database/vehicleDatase.sqlite", &database);
+   int rc = sqlite3_open("../database/automotiveDatabase.sqlite", &database);
 
    if(rc) {
       cout << "Couldnt open database" << endl;
       return 1;
-   } else {
-      cout << "Opened database successfully" << endl;
    }
 
    char* errMsg = 0;
@@ -28,7 +26,7 @@ int AlertManagement::insertData(int vehicleId, string timestamp, string alertTyp
    rc = sqlite3_exec(database, sql, callback, 0, &errMsg);
 
    if(rc != SQLITE_OK) {
-      cout << "Cant insert: " << errMsg << endl;
+      cout << "Cant insert: " << sqlite3_errmsg(database) << endl;
       sqlite3_free(errMsg);
    } else {
       cout << "Data inserted to dtc successffully" << endl;

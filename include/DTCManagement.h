@@ -9,7 +9,7 @@ class DtcManagement {
       void update(std::string DTCCode, std::string description, std::string severity, int id);
       void del(int id);
       void showColumns();
-
+      void showMenu();
 };
 
 #endif // !DEBUG

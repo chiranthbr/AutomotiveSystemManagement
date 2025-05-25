@@ -225,6 +225,54 @@ src/create.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/create.cpp.s
 .PHONY : src/create.cpp.s
 
+src/obdInterface.o: src/obdInterface.cpp.o
+.PHONY : src/obdInterface.o
+
+# target to build an object file
+src/obdInterface.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.o
+.PHONY : src/obdInterface.cpp.o
+
+src/obdInterface.i: src/obdInterface.cpp.i
+.PHONY : src/obdInterface.i
+
+# target to preprocess a source file
+src/obdInterface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.i
+.PHONY : src/obdInterface.cpp.i
+
+src/obdInterface.s: src/obdInterface.cpp.s
+.PHONY : src/obdInterface.s
+
+# target to generate assembly for a file
+src/obdInterface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.s
+.PHONY : src/obdInterface.cpp.s
+
+src/realTimeData.o: src/realTimeData.cpp.o
+.PHONY : src/realTimeData.o
+
+# target to build an object file
+src/realTimeData.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.o
+.PHONY : src/realTimeData.cpp.o
+
+src/realTimeData.i: src/realTimeData.cpp.i
+.PHONY : src/realTimeData.i
+
+# target to preprocess a source file
+src/realTimeData.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.i
+.PHONY : src/realTimeData.cpp.i
+
+src/realTimeData.s: src/realTimeData.cpp.s
+.PHONY : src/realTimeData.s
+
+# target to generate assembly for a file
+src/realTimeData.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.s
+.PHONY : src/realTimeData.cpp.s
+
 src/vehicleManagement.o: src/vehicleManagement.cpp.o
 .PHONY : src/vehicleManagement.o
 
@@ -270,6 +318,12 @@ help:
 	@echo "... src/create.o"
 	@echo "... src/create.i"
 	@echo "... src/create.s"
+	@echo "... src/obdInterface.o"
+	@echo "... src/obdInterface.i"
+	@echo "... src/obdInterface.s"
+	@echo "... src/realTimeData.o"
+	@echo "... src/realTimeData.i"
+	@echo "... src/realTimeData.s"
 	@echo "... src/vehicleManagement.o"
 	@echo "... src/vehicleManagement.i"
 	@echo "... src/vehicleManagement.s"

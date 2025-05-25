@@ -151,5 +151,16 @@ CMakeFiles/AutomotiveSystemManagement.dir/src/vehicleManagement.cpp.o: \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
  /home/chiru/Stuffs/kpit/auotomotiveProject/include/vehicleManagement.h \
- /usr/include/sqlite3.h \
- /home/chiru/Stuffs/kpit/auotomotiveProject/include/create.h
+ /usr/include/sqlite3.h /usr/include/c++/13/algorithm \
+ /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/bits/algorithmfwd.h \
+ /usr/include/c++/13/bits/stl_heap.h \
+ /usr/include/c++/13/bits/uniform_int_dist.h \
+ /usr/include/c++/13/bits/stl_tempbuf.h \
+ /usr/include/c++/13/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/13/pstl/execution_defs.h \
+ /home/chiru/Stuffs/kpit/auotomotiveProject/include/create.h \
+ /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
+ /usr/include/c++/13/bits/stl_vector.h \
+ /usr/include/c++/13/bits/stl_bvector.h \
+ /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/limits

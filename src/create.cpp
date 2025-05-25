@@ -6,20 +6,9 @@
 #include <string>
 #include <typeinfo>
 
+extern sqlite3* database = nullptr;
+
 using namespace std;
-
-sqlite3* database = nullptr;
-
-vector<string> retrieveRow(void* NotUse, int argc, char** argv, char** azColName) {
-   vector<string> s;
-   for(int i = 0; i < argc; i++) {
-      if(typeid(argv[i]).name() == 'i' || typeid(argv[i]).name() == 'd') {
-         s.push_back(std::to_string(argv[i]));
-      } else {
-         s.push_back(argv[i]);
-      }
-   }
-}
 
 int callbackGetColumns(void* Notused, int argc, char** argv, char** azColName) {
    for(int i = 0; i < argc; i++) {
@@ -40,12 +29,10 @@ int callback(void *NotUsed, int argc, char **argv, char **azColName) {
    return 0;
 }
 int createDbAndTables() {
-
-   int rc = sqlite3_open("../database/vehicleDatase.sqlite", &database);
-
+   
+   int rc = sqlite3_open("../database/automotiveDatabase.sqlite", &database);
    if(rc) {
-      std::cout << "Can't create or open databse" << std::endl;
-      return 1;
+      cout << "Couldnt open database: " << sqlite3_errmsg(database) << endl;
    }
 
    char* errMsg = 0;
@@ -62,7 +49,7 @@ int createDbAndTables() {
    rc = sqlite3_exec(database, sql, callback, 0, &errMsg);
    
    if(rc != SQLITE_OK) {
-      std::cout << "Couldnt create table: " << errMsg << std::endl;
+      std::cout << "Couldnt create table vehicles: " << sqlite3_errmsg(database) << std::endl;
    }
 
    sql = "CREATE TABLE IF NOT EXISTS DTCs("  \
@@ -92,7 +79,7 @@ int createDbAndTables() {
    rc = sqlite3_exec(database, sql, callback, 0, &errMsg);
 
    if(rc != SQLITE_OK) {
-      std::cout << "Couldnt create table: " << errMsg << std::endl;
+      std::cout << "Couldnt create table real time: " << errMsg << std::endl;
    }
  
    sql = "CREATE TABLE IF NOT EXISTS Alerts ("  \
@@ -106,7 +93,7 @@ int createDbAndTables() {
    rc = sqlite3_exec(database, sql, callback, 0, &errMsg);
 
    if(rc != SQLITE_OK) {
-      std::cout << "Couldnt create table: " << errMsg << std::endl;
+      std::cout << "Couldnt create table alert: " << errMsg << std::endl;
    }
 
    sql = "CREATE TABLE IF NOT EXISTS Users ("\
@@ -118,14 +105,13 @@ int createDbAndTables() {
    rc = sqlite3_exec(database, sql, callback, 0, &errMsg);
 
    if(rc != SQLITE_OK) {
-      std::cout << "Couldnt create table: " << errMsg << std::endl;
+      std::cout << "Couldnt create table users: " << errMsg << std::endl;
    }
 
    sqlite3_close(database);
 
    return 0;
 }
-
 
 void closeDb() {
    sqlite3_close(database);
