@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/AutomotiveSystemManagement.dir/src/alertManagement.cpp.o.d"
   "CMakeFiles/AutomotiveSystemManagement.dir/src/create.cpp.o"
   "CMakeFiles/AutomotiveSystemManagement.dir/src/create.cpp.o.d"
+  "CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.o"
+  "CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.o.d"
   "CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.o"
   "CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.o.d"
   "CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.o"

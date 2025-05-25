@@ -225,6 +225,30 @@ src/create.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/create.cpp.s
 .PHONY : src/create.cpp.s
 
+src/dataAnalyze.o: src/dataAnalyze.cpp.o
+.PHONY : src/dataAnalyze.o
+
+# target to build an object file
+src/dataAnalyze.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.o
+.PHONY : src/dataAnalyze.cpp.o
+
+src/dataAnalyze.i: src/dataAnalyze.cpp.i
+.PHONY : src/dataAnalyze.i
+
+# target to preprocess a source file
+src/dataAnalyze.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.i
+.PHONY : src/dataAnalyze.cpp.i
+
+src/dataAnalyze.s: src/dataAnalyze.cpp.s
+.PHONY : src/dataAnalyze.s
+
+# target to generate assembly for a file
+src/dataAnalyze.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AutomotiveSystemManagement.dir/build.make CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.s
+.PHONY : src/dataAnalyze.cpp.s
+
 src/obdInterface.o: src/obdInterface.cpp.o
 .PHONY : src/obdInterface.o
 
@@ -318,6 +342,9 @@ help:
 	@echo "... src/create.o"
 	@echo "... src/create.i"
 	@echo "... src/create.s"
+	@echo "... src/dataAnalyze.o"
+	@echo "... src/dataAnalyze.i"
+	@echo "... src/dataAnalyze.s"
 	@echo "... src/obdInterface.o"
 	@echo "... src/obdInterface.i"
 	@echo "... src/obdInterface.s"

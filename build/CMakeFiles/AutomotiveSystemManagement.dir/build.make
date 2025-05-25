@@ -111,10 +111,24 @@ CMakeFiles/AutomotiveSystemManagement.dir/src/create.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AutomotiveSystemManagement.dir/src/create.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chiru/Stuffs/kpit/auotomotiveProject/src/create.cpp -o CMakeFiles/AutomotiveSystemManagement.dir/src/create.cpp.s
 
+CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.o: CMakeFiles/AutomotiveSystemManagement.dir/flags.make
+CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.o: /home/chiru/Stuffs/kpit/auotomotiveProject/src/dataAnalyze.cpp
+CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.o: CMakeFiles/AutomotiveSystemManagement.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chiru/Stuffs/kpit/auotomotiveProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.o -MF CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.o.d -o CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.o -c /home/chiru/Stuffs/kpit/auotomotiveProject/src/dataAnalyze.cpp
+
+CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chiru/Stuffs/kpit/auotomotiveProject/src/dataAnalyze.cpp > CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.i
+
+CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chiru/Stuffs/kpit/auotomotiveProject/src/dataAnalyze.cpp -o CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.s
+
 CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.o: CMakeFiles/AutomotiveSystemManagement.dir/flags.make
 CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.o: /home/chiru/Stuffs/kpit/auotomotiveProject/src/obdInterface.cpp
 CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.o: CMakeFiles/AutomotiveSystemManagement.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chiru/Stuffs/kpit/auotomotiveProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chiru/Stuffs/kpit/auotomotiveProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.o -MF CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.o.d -o CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.o -c /home/chiru/Stuffs/kpit/auotomotiveProject/src/obdInterface.cpp
 
 CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.s: cmake_force
 CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.o: CMakeFiles/AutomotiveSystemManagement.dir/flags.make
 CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.o: /home/chiru/Stuffs/kpit/auotomotiveProject/src/realTimeData.cpp
 CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.o: CMakeFiles/AutomotiveSystemManagement.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chiru/Stuffs/kpit/auotomotiveProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chiru/Stuffs/kpit/auotomotiveProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.o -MF CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.o.d -o CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.o -c /home/chiru/Stuffs/kpit/auotomotiveProject/src/realTimeData.cpp
 
 CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.s: cmake_force
 CMakeFiles/AutomotiveSystemManagement.dir/src/vehicleManagement.cpp.o: CMakeFiles/AutomotiveSystemManagement.dir/flags.make
 CMakeFiles/AutomotiveSystemManagement.dir/src/vehicleManagement.cpp.o: /home/chiru/Stuffs/kpit/auotomotiveProject/src/vehicleManagement.cpp
 CMakeFiles/AutomotiveSystemManagement.dir/src/vehicleManagement.cpp.o: CMakeFiles/AutomotiveSystemManagement.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chiru/Stuffs/kpit/auotomotiveProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AutomotiveSystemManagement.dir/src/vehicleManagement.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chiru/Stuffs/kpit/auotomotiveProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AutomotiveSystemManagement.dir/src/vehicleManagement.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AutomotiveSystemManagement.dir/src/vehicleManagement.cpp.o -MF CMakeFiles/AutomotiveSystemManagement.dir/src/vehicleManagement.cpp.o.d -o CMakeFiles/AutomotiveSystemManagement.dir/src/vehicleManagement.cpp.o -c /home/chiru/Stuffs/kpit/auotomotiveProject/src/vehicleManagement.cpp
 
 CMakeFiles/AutomotiveSystemManagement.dir/src/vehicleManagement.cpp.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/AutomotiveSystemManagement.dir/src/vehicleManagement.cpp.s: cmake_for
 CMakeFiles/AutomotiveSystemManagement.dir/main.cpp.o: CMakeFiles/AutomotiveSystemManagement.dir/flags.make
 CMakeFiles/AutomotiveSystemManagement.dir/main.cpp.o: /home/chiru/Stuffs/kpit/auotomotiveProject/main.cpp
 CMakeFiles/AutomotiveSystemManagement.dir/main.cpp.o: CMakeFiles/AutomotiveSystemManagement.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chiru/Stuffs/kpit/auotomotiveProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AutomotiveSystemManagement.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/chiru/Stuffs/kpit/auotomotiveProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AutomotiveSystemManagement.dir/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AutomotiveSystemManagement.dir/main.cpp.o -MF CMakeFiles/AutomotiveSystemManagement.dir/main.cpp.o.d -o CMakeFiles/AutomotiveSystemManagement.dir/main.cpp.o -c /home/chiru/Stuffs/kpit/auotomotiveProject/main.cpp
 
 CMakeFiles/AutomotiveSystemManagement.dir/main.cpp.i: cmake_force
@@ -172,6 +186,7 @@ AutomotiveSystemManagement_OBJECTS = \
 "CMakeFiles/AutomotiveSystemManagement.dir/src/DTCManagement.cpp.o" \
 "CMakeFiles/AutomotiveSystemManagement.dir/src/alertManagement.cpp.o" \
 "CMakeFiles/AutomotiveSystemManagement.dir/src/create.cpp.o" \
+"CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.o" \
 "CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.o" \
 "CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.o" \
 "CMakeFiles/AutomotiveSystemManagement.dir/src/vehicleManagement.cpp.o" \
@@ -183,6 +198,7 @@ AutomotiveSystemManagement_EXTERNAL_OBJECTS =
 AutomotiveSystemManagement: CMakeFiles/AutomotiveSystemManagement.dir/src/DTCManagement.cpp.o
 AutomotiveSystemManagement: CMakeFiles/AutomotiveSystemManagement.dir/src/alertManagement.cpp.o
 AutomotiveSystemManagement: CMakeFiles/AutomotiveSystemManagement.dir/src/create.cpp.o
+AutomotiveSystemManagement: CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.o
 AutomotiveSystemManagement: CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.o
 AutomotiveSystemManagement: CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.o
 AutomotiveSystemManagement: CMakeFiles/AutomotiveSystemManagement.dir/src/vehicleManagement.cpp.o
@@ -190,7 +206,7 @@ AutomotiveSystemManagement: CMakeFiles/AutomotiveSystemManagement.dir/main.cpp.o
 AutomotiveSystemManagement: CMakeFiles/AutomotiveSystemManagement.dir/build.make
 AutomotiveSystemManagement: /usr/lib/x86_64-linux-gnu/libsqlite3.so
 AutomotiveSystemManagement: CMakeFiles/AutomotiveSystemManagement.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chiru/Stuffs/kpit/auotomotiveProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable AutomotiveSystemManagement"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chiru/Stuffs/kpit/auotomotiveProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable AutomotiveSystemManagement"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AutomotiveSystemManagement.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
