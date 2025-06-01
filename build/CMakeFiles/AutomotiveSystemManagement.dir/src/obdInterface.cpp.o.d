@@ -1,5 +1,5 @@
 CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.o: \
- /home/chiru/Stuffs/kpit/auotomotiveProject/src/obdInterface.cpp \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/src/obdInterface.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -150,5 +150,5 @@ CMakeFiles/AutomotiveSystemManagement.dir/src/obdInterface.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/chiru/Stuffs/kpit/auotomotiveProject/include/obdInterface.h \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/include/obdInterface.h \
  /usr/include/c++/13/ctime

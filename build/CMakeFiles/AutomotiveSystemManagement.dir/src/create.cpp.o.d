@@ -1,7 +1,7 @@
 CMakeFiles/AutomotiveSystemManagement.dir/src/create.cpp.o: \
- /home/chiru/Stuffs/kpit/auotomotiveProject/src/create.cpp \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/src/create.cpp \
  /usr/include/stdc-predef.h \
- /home/chiru/Stuffs/kpit/auotomotiveProject/include/create.h \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/include/create.h \
  /usr/include/sqlite3.h /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \

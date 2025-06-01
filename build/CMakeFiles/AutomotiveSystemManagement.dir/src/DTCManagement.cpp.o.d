@@ -1,7 +1,7 @@
 CMakeFiles/AutomotiveSystemManagement.dir/src/DTCManagement.cpp.o: \
- /home/chiru/Stuffs/kpit/auotomotiveProject/src/DTCManagement.cpp \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/src/DTCManagement.cpp \
  /usr/include/stdc-predef.h \
- /home/chiru/Stuffs/kpit/auotomotiveProject/include/DTCManagement.h \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/include/DTCManagement.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -116,7 +116,7 @@ CMakeFiles/AutomotiveSystemManagement.dir/src/DTCManagement.cpp.o: \
  /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
- /home/chiru/Stuffs/kpit/auotomotiveProject/include/alertManagement.h \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/include/alertManagement.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/exception \
  /usr/include/c++/13/bits/exception_ptr.h \
@@ -154,7 +154,7 @@ CMakeFiles/AutomotiveSystemManagement.dir/src/DTCManagement.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/chiru/Stuffs/kpit/auotomotiveProject/include/create.h \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/include/create.h \
  /usr/include/sqlite3.h /usr/include/c++/13/ctime \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/chiru/Stuffs/kpit/auotomotiveProject/include
+CXX_INCLUDES = -I/home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/include
 
 CXX_FLAGS = -std=gnu++17
 

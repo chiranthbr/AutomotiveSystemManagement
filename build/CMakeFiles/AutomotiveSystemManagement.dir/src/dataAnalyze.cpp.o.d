@@ -1,5 +1,5 @@
 CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.o: \
- /home/chiru/Stuffs/kpit/auotomotiveProject/src/dataAnalyze.cpp \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/src/dataAnalyze.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -159,7 +159,7 @@ CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.o: \
  /usr/include/c++/13/bits/locale_conv.h \
  /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/sstream \
  /usr/include/c++/13/bits/sstream.tcc \
- /home/chiru/Stuffs/kpit/auotomotiveProject/include/dataAnalyze.h \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/include/dataAnalyze.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
@@ -170,4 +170,4 @@ CMakeFiles/AutomotiveSystemManagement.dir/src/dataAnalyze.cpp.o: \
  /usr/include/c++/13/bits/stl_map.h \
  /usr/include/c++/13/bits/stl_multimap.h \
  /usr/include/c++/13/bits/erase_if.h \
- /home/chiru/Stuffs/kpit/auotomotiveProject/include/create.h
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/include/create.h

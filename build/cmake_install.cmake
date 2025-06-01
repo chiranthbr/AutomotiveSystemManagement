@@ -1,4 +1,4 @@
-# Install script for directory: /home/chiru/Stuffs/kpit/auotomotiveProject
+# Install script for directory: /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/chiru/Stuffs/kpit/auotomotiveProject/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

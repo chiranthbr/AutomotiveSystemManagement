@@ -1,5 +1,5 @@
 CMakeFiles/AutomotiveSystemManagement.dir/src/vehicleManagement.cpp.o: \
- /home/chiru/Stuffs/kpit/auotomotiveProject/src/vehicleManagement.cpp \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/src/vehicleManagement.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -150,7 +150,7 @@ CMakeFiles/AutomotiveSystemManagement.dir/src/vehicleManagement.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/chiru/Stuffs/kpit/auotomotiveProject/include/vehicleManagement.h \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/include/vehicleManagement.h \
  /usr/include/sqlite3.h /usr/include/c++/13/algorithm \
  /usr/include/c++/13/bits/stl_algo.h \
  /usr/include/c++/13/bits/algorithmfwd.h \
@@ -159,7 +159,7 @@ CMakeFiles/AutomotiveSystemManagement.dir/src/vehicleManagement.cpp.o: \
  /usr/include/c++/13/bits/stl_tempbuf.h \
  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
  /usr/include/c++/13/pstl/execution_defs.h \
- /home/chiru/Stuffs/kpit/auotomotiveProject/include/create.h \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/include/create.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \

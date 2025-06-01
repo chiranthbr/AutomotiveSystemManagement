@@ -1,5 +1,5 @@
 CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.o: \
- /home/chiru/Stuffs/kpit/auotomotiveProject/src/realTimeData.cpp \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/src/realTimeData.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/13/iostream \
  /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -150,9 +150,9 @@ CMakeFiles/AutomotiveSystemManagement.dir/src/realTimeData.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/chiru/Stuffs/kpit/auotomotiveProject/include/realTimeData.h \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/include/realTimeData.h \
  /usr/include/sqlite3.h \
- /home/chiru/Stuffs/kpit/auotomotiveProject/include/create.h \
- /home/chiru/Stuffs/kpit/auotomotiveProject/include/obdInterface.h \
- /home/chiru/Stuffs/kpit/auotomotiveProject/include/alertManagement.h \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/include/create.h \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/include/obdInterface.h \
+ /home/chiru/Stuffs/kpit/ChiranthBR_KPIT_Project/include/alertManagement.h \
  /usr/include/c++/13/ctime
